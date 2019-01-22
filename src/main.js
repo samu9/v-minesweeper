@@ -3,7 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 
+import '../node_modules/nes.css/css/nes.min.css'
+
+import GameService from './GameService'
 // Vue.config.productionTip = false
+
+if (localStorage.getItem("game") === null) {
+  var game = new GameService(20, 25);
+} else {
+  var game = localStorage.getItem("game");
+}
+
+
 
 /* eslint-disable no-new */
 new Vue({
@@ -11,3 +22,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+export { game }
