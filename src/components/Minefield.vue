@@ -1,6 +1,6 @@
 <template>
-  <div class="minefield nes-container" style="padding: 6px">
-    <div class="row" v-for="(row,r) of grid" :key="r">
+  <div class="minefield nes-container">
+    <div class="mine-row" v-for="(row,r) of grid" :key="r">
       <div
         class="cell"
         v-for="(cell,c) of row"
@@ -9,7 +9,7 @@
         v-on:click.right.prevent="game.setFlag(r,c)"
         v-bind:class="{ 
           bombed : cell.bomb && cell.revealed,
-          flagged : cell.flagged,
+          flagged  : cell.flagged,
           revealed : cell.revealed,
           ['cell' + cell.value] : cell.revealed
           }"

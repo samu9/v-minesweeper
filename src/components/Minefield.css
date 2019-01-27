@@ -1,8 +1,10 @@
 .minefield {
     display: flex;
     flex-direction: column;
+    margin: 0px auto;
+    padding: 6px
   }
-  .row {
+  .mine-row {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -10,9 +12,9 @@
   .cell {
     display: flex;
     justify-content: center;
-    width: 16px;
-    height: 16px;
-    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
     font-size: 10px;
     cursor: pointer;
   
@@ -41,8 +43,8 @@
     color: purple;
   }
   .revealed {
-    background: rgb(202, 202, 202);
+    background: rgb(156, 156, 156);
   }
   .bombed{
-      background: red;
+      background: #ff4343;
   }
