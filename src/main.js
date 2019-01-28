@@ -26,10 +26,6 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
-
-
-
-
 import GameService from './GameService'
 import LeaderboardService from './LeaderboardService';
 // Vue.config.productionTip = false
