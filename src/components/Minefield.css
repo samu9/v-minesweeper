@@ -4,6 +4,10 @@
     margin: 0px auto;
     padding: 6px
   }
+.minefield img{
+  width: 16px;
+  height: 16px;
+}
   .mine-row {
     display: flex;
     justify-content: center;

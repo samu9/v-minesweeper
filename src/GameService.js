@@ -164,7 +164,6 @@ export default class GameService {
         this.updateGrid();
     }
     checkWin() {
-        console.log("Defused", this.defused, "Covered", this.covered);
         if (this.defused == this.bombs && this.covered == 0) {
             this.win();
 
@@ -192,9 +191,6 @@ export default class GameService {
         if (lbService.checkRecord(this.timer,this.gameType) && this.gameType){
             this.EventBus.$emit('newRecord', null);
         }
-        // if (this.gameType != null) { // custom games won't be saved
-        //     lbService.addRecord("Sam", this.timer, this.gameType);
-        // }
     }
     start() {
         this.started = true;
