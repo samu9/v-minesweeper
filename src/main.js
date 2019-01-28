@@ -28,8 +28,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../node_modules/nes.css/css/nes.min.css'
+
 
 import GameService from './GameService'
 import LeaderboardService from './LeaderboardService';
@@ -47,5 +46,7 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+
 
 export { game, lbService, db }

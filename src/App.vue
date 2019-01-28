@@ -47,6 +47,8 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+@import url('../node_modules/nes.css/css/nes.min.css');
 html {
   cursor: auto;
 }
