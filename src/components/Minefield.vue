@@ -15,12 +15,13 @@
           }"
       >
         {{
-        cell.flagged? 'F' :
-        cell.bomb && cell.revealed? 'B' :
+        cell.bomb && cell.revealed? '' :
         cell.revealed && cell.value == 0 ? '' :
         cell.revealed && !cell.bomb? cell.value :
         !cell.revealed? '' :
         '' }}
+        <img v-if="cell.flagged" src="../assets/flag.png">
+        <img v-if="cell.bomb && cell.revealed" src="../assets/bomb.png">
       </div>
     </div>
   </div>

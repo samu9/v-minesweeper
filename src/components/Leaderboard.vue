@@ -43,3 +43,8 @@ export default {
   }
 };
 </script>
+<style>
+#leaderboard p{
+  font-size: 0.9rem;
+}
+</style>

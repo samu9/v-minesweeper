@@ -12,11 +12,15 @@
   .cell {
     display: flex;
     justify-content: center;
+    align-content: center;
     width: 20px;
     height: 20px;
     border: 2px solid black;
-    font-size: 10px;
+    font-size: 0.7rem;
     cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+
   
     /* disabilitare selezione testo */
     -webkit-touch-callout: none;
@@ -47,4 +51,7 @@
   }
   .bombed{
       background: #ff4343;
+  }
+  .flagged{
+
   }
