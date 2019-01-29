@@ -218,8 +218,8 @@ export default class GameService {
         return true;
     }
     load() {
-        this.stop();
-        if (localStorage.getItem("game") !== null) {
+        if (localStorage.getItem("game") === null) return false;
+            this.stop();
             var loadObject = JSON.parse(localStorage.getItem("game"));
             this.height = loadObject.height;
             this.width = loadObject.width;
@@ -232,8 +232,9 @@ export default class GameService {
             this.gameType = loadObject.gameType;
             this.victory = false;
             this.loss = false;
-        }
-        this.start();
-        this.updateGrid();
+            this.start();
+            this.updateGrid();
+            return true;
+        
     }
 }

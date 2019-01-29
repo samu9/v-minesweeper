@@ -36,20 +36,20 @@ export default {
   },
   methods: {
     saveGame: function() {
-      if(this.game.loss || this.game.victory) return;
+      if (this.game.loss || this.game.victory) return;
       this.saved = true;
       this.game.save();
       setTimeout(() => {
         this.saved = false;
       }, 3000);
-      console.log("saved");
     },
     loadGame: function() {
-      this.loaded = true;
-      this.game.load();
-      setTimeout(() => {
-        this.loaded = false;
-      }, 3000);
+      if (this.game.load() == true) {
+        this.loaded = true;
+        setTimeout(() => {
+          this.loaded = false;
+        }, 3000);
+      }
     }
   }
 };
