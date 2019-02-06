@@ -39,6 +39,7 @@ export default {
       if (this.game.loss || this.game.victory) return;
       this.saved = true;
       this.game.save();
+      // saved state disappears after 3 seconds
       setTimeout(() => {
         this.saved = false;
       }, 3000);
@@ -46,6 +47,7 @@ export default {
     loadGame: function() {
       if (this.game.load() == true) {
         this.loaded = true;
+        // loaded state disappears after 3 seconds
         setTimeout(() => {
           this.loaded = false;
         }, 3000);

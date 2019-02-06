@@ -7,18 +7,16 @@
         :key="c"
         v-on:click.prevent="game.revealCell(r,c)"
         v-on:click.right.prevent="game.setFlag(r,c)"
-        v-bind:class="{ 
-          bombed : cell.bomb && cell.revealed,
+        v-bind:class="{ // assigning CSS classes based on cell status
+          bombed : cell.bomb && cell.revealed, 
           flagged  : cell.flagged,
           revealed : cell.revealed,
-          ['cell' + cell.value] : cell.revealed
+          ['cell' + cell.value] : cell.revealed //class for the different color on different values
           }"
       >
-        {{
-        cell.bomb && cell.revealed? '' :
+        {{ // assigning cell content based on its status
         cell.revealed && cell.value == 0 ? '' :
         cell.revealed && !cell.bomb? cell.value :
-        !cell.revealed? '' :
         '' }}
         <img v-if="cell.flagged" src="../assets/flag.png">
         <img v-if="cell.bomb && cell.revealed" src="../assets/bomb.png">
@@ -29,7 +27,6 @@
 
 <script>
 import Vue from "vue";
-// import { game } from "../main";
 export default {
   name: "Minefield",
   props: {
@@ -42,13 +39,15 @@ export default {
   },
   created: function() {
     this.updateGrid();
+
+    // when the event is launched, update the grid
     this.game.EventBus.$on("updatedGrid", newGrid => {
       this.updateGrid();
     });
   },
-  mounted: function() {},
   methods: {
     updateGrid: function() {
+      // update the local grid copy based on the gameService grid
       this.grid = [];
       for (let row = 0; row < this.game.height; row++) {
         let obj = [];
@@ -61,14 +60,7 @@ export default {
         }
         Vue.set(this.grid, row, obj);
       }
-      // localStorage.game = JSON.stringify(this.game);
     },
-    reveal(row,col){
-
-    },
-    flag(row,col){
-
-    }
   }
 };
 </script>

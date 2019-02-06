@@ -6,6 +6,8 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import App from './App'
 
+// leaderboard data is stored on Google Firebase
+// API keys are needed to connect and get/post data
 var config = {
   apiKey: "AIzaSyB1MYvpBJdco9NMpZMQsmswyPIrZFZ0YWU",
   authDomain: "minesweeper-9c287.firebaseapp.com",
@@ -19,12 +21,9 @@ firebase.auth().signInAnonymously().catch(function (error) {
   console.log(error.message)
 });
 var db = firebase.firestore().collection("leaderboard");
-
 firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-
-  } else {
-    console.log("not logged")
+  if (!user) {
+    console.log("ERROR: not logged");
   }
 });
 
@@ -32,19 +31,15 @@ import GameService from './GameService'
 import LeaderboardService from './LeaderboardService';
 // Vue.config.productionTip = false
 
-
+// new instances for GameService and LeaderboardService
 var game = new GameService(16, 16, 40, "Normal");
 var lbService = new LeaderboardService(db);
 
-
-
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   components: { App },
   template: '<App/>'
 })
 
-
-
-export { game, lbService, db }
+// exporting the services
+export { game, lbService }

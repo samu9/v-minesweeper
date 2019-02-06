@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { db, lbService } from "./main";
 
 export default class GameService {
-    mineProb = 0.15625;
+    mineProb = 0.15625; // based on minesweepronline.com values
     diffs = ['Easy', 'Normal', 'Hard'];
     bombs = 0;
     marked = 0;
@@ -14,6 +14,7 @@ export default class GameService {
     constructor(height, width, bombs = 0, gameType = null) {
         this.initialize(height, width, bombs, gameType);
     }
+
     updateGrid() {
         this.EventBus.$emit('updatedGrid', this.grid);
     }
@@ -73,7 +74,9 @@ export default class GameService {
             }
         }
 
+        // firing the event
         this.updateGrid();
+
         clearInterval(this.interval);
     }
     getEdges(row, col) {
@@ -166,7 +169,6 @@ export default class GameService {
     checkWin() {
         if (this.defused == this.bombs && this.covered == 0) {
             this.win();
-
         }
     }
     gameOver() {
@@ -188,7 +190,7 @@ export default class GameService {
         this.victory = true;
         this.stop();
         // if a new record is set, lanch an event
-        if (lbService.checkRecord(this.timer,this.gameType) && this.gameType){
+        if (lbService.checkRecord(this.timer, this.gameType) && this.gameType) {
             this.EventBus.$emit('newRecord', null);
         }
     }
@@ -202,7 +204,10 @@ export default class GameService {
         clearInterval(this.interval);
     }
     save() {
+        // can't save if there's a loss or a victory
         if (this.loss || this.victory) return false;
+
+        // getting all the needed data into an object
         var saveObject = {
             height: this.height,
             width: this.width,
@@ -214,27 +219,33 @@ export default class GameService {
             covered: this.covered,
             gameType: this.gameType
         }
+
+        // stringify the object and save it in localStorage as a string
         localStorage.setItem('game', JSON.stringify(saveObject));
         return true;
     }
     load() {
         if (localStorage.getItem("game") === null) return false;
-            this.stop();
-            var loadObject = JSON.parse(localStorage.getItem("game"));
-            this.height = loadObject.height;
-            this.width = loadObject.width;
-            this.timer = loadObject.timer;
-            this.grid = loadObject.grid;
-            this.marked = loadObject.marked;
-            this.defused = loadObject.defused;
-            this.bombs = loadObject.bombs;
-            this.covered = loadObject.covered;
-            this.gameType = loadObject.gameType;
-            this.victory = false;
-            this.loss = false;
-            this.start();
-            this.updateGrid();
-            return true;
+        this.stop();
+        var loadObject = JSON.parse(localStorage.getItem("game"));
+
+        // resuming all the data
+        this.height = loadObject.height;
+        this.width = loadObject.width;
+        this.timer = loadObject.timer;
+        this.grid = loadObject.grid;
+        this.marked = loadObject.marked;
+        this.defused = loadObject.defused;
+        this.bombs = loadObject.bombs;
+        this.covered = loadObject.covered;
+        this.gameType = loadObject.gameType;
         
+        this.victory = false;
+        this.loss = false;
+
+        this.start();
+        this.updateGrid();
+        return true;
+
     }
 }

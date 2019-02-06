@@ -59,6 +59,7 @@ export default {
   mounted() {},
   methods: {
     startCustomGame: function() {
+      // limiting user input data
       if (this.custom.height < this.minVal) {
         this.custom.height = this.minVal;
       } else if (this.custom.height > this.maxVal) {
@@ -69,6 +70,7 @@ export default {
       } else if (this.custom.width > this.maxVal) {
         this.custom.width = this.maxVal;
       }
+
       this.game.initialize(
         this.custom.height,
         this.custom.width,
@@ -76,6 +78,7 @@ export default {
       );
       this.openSettings = false;
     },
+    
     startDifficultyGame() {
       switch (this.selectedDifficulty) {
         case 0:

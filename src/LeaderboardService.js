@@ -1,5 +1,6 @@
 import Vue from 'vue';
 export default class LeaderboardService {
+    maxRecords = 5;
     leaderboard = {};
     EventBus = new Vue();
 
@@ -22,7 +23,7 @@ export default class LeaderboardService {
                 querySnapshot.forEach(doc => {
                     let data = doc.data();
                     // only show the best 5 records for each level
-                    if (this.leaderboard[data.type].length < 5) {
+                    if (this.leaderboard[data.type].length < this.maxRecords) {
                         this.leaderboard[data.type].push([data.user, data.time]);
                     }
                 });
@@ -37,11 +38,11 @@ export default class LeaderboardService {
         })
         this.update();
     }
-    checkRecord(time, level) {
-        if (this.leaderboard[level].length < 5 || time < this.leaderboard[level][this.leaderboard[level].length - 1][1]) return true;
-        return false;
-    }
     getWorst(level) {
         return this.leaderboard[level][this.leaderboard[level].length - 1][1];
+    }
+    checkRecord(time, level) {
+        // if records less than 5 or better than the worst record, there is a new record
+        return (this.leaderboard[level].length < this.maxRecords || time < this.getWorst(level));
     }
 }
