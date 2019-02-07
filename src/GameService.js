@@ -120,8 +120,8 @@ export default class GameService {
         if (this.grid[row][col].value === 0) {
             this.revealNeighbors(row, col);
         }
-        this.checkWin();
         this.updateGrid();
+        this.checkWin();
     }
     revealNeighbors(row, col) {
         var edges = this.getEdges(row, col);
@@ -163,8 +163,8 @@ export default class GameService {
                 this.defused--;
             }
         }
-        this.checkWin();
         this.updateGrid();
+        this.checkWin();
     }
     checkWin() {
         if (this.defused == this.bombs && this.covered == 0) {

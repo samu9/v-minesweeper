@@ -2,10 +2,7 @@
   <div id="app">
     <Navbar/>
     <div id="main" class="row">
-      <div class="col-lg-3">
-        <Settings/>
-        <Leaderboard/>
-      </div>
+      <div class="offset-lg-3"></div>
       <div class="col-lg-6">
         <div id="game">
           <StatusBar/>
@@ -13,7 +10,10 @@
           <NewRecordBox/>
         </div>
       </div>
-      <div class="offset-lg-3"></div>
+      <div class="col-lg-3">
+        <Settings/>
+        <Leaderboard/>
+      </div>
     </div>
   </div>
 </template>

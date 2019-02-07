@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     resetGame: function() {
+      // reinitialize the game with the same settings
       this.game.initialize(this.game.height, this.game.width, this.game.bombs, this.game.gameType);
     }
   }

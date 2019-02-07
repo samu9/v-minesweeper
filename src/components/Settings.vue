@@ -23,12 +23,12 @@
       <div class="nes-container with-title">
         <h3 class="title">Custom:</h3>
 
-        <div class="nes-field">
+        <div class="nes-field mb-3">
           <label>Grid size</label>
-          <input v-model="custom.height" type="text" class="nes-input sett-input" maxlength="2">
-          <input v-model="custom.width" type="text" class="nes-input sett-input" maxlength="2">
+          <input v-model="custom.height" type="text" class="nes-input sett-input grid-input" maxlength="2">
+          <input v-model="custom.width" type="text" class="nes-input sett-input grid-input" maxlength="2">
         </div>
-        <div class="nes-field">
+        <div class="nes-field mb-3">
           <label>Bombs</label>
           <input v-model="custom.bombs" type="text" class="nes-input sett-input">
         </div>
@@ -101,5 +101,8 @@ export default {
 .sett-input {
   width: 4rem;
   padding-left: 1rem;
+}
+.sett-input.grid-input{
+  display: unset;
 }
 </style>
