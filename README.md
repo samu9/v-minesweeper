@@ -22,4 +22,4 @@ A live version of the last build is available [here](https://samu9.github.io/v-m
  Leaderboard keeps track of the best 5 scores for each difficulty.
  Custom grid sizes scores won't be saved.
  A 4 characters nickname must be inserted, and the leaderboard will update automatically.
-  :exclamation: Poor Internet connection could lead to connection errors from Google Firebase. 
+ :exclamation: Poor Internet connection could lead to connection errors from Google Firebase. 
