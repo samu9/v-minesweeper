@@ -9,6 +9,8 @@
 3. Run `npm run build` to build the code
 4. In _dist/_ folder, launch _index.html_ (it must be launched on a HTTP server)
 
+Alternatively, run `npm run dev` and open a browser page to _localhost:8080_
+
 ## Live version
 A live version of the last build is available [here](https://samu9.github.io/v-minesweeper).
 
@@ -20,3 +22,4 @@ A live version of the last build is available [here](https://samu9.github.io/v-m
  Leaderboard keeps track of the best 5 scores for each difficulty.
  Custom grid sizes scores won't be saved.
  A 4 characters nickname must be inserted, and the leaderboard will update automatically.
+  :exclamation: Poor Internet connection could lead to connection errors from Google Firebase. 
