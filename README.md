@@ -21,5 +21,8 @@ A live version of the last build is available [here](https://samu9.github.io/v-m
  ## Leaderboard
  Leaderboard keeps track of the best 5 scores for each difficulty.
  Custom grid sizes scores won't be saved.
- A 4 characters nickname must be inserted, and the leaderboard will update automatically.
- :exclamation: Poor Internet connection could lead to connection errors from Google Firebase. 
+ When you set a new highscore a 4 characters nickname must be inserted, and the leaderboard will update automatically (it might take some time depending on internet connection and response times from the server).
+ 
+ :exclamation: Poor Internet connection could lead to connection errors from Google Firebase.
+ 
+ 
