@@ -16,7 +16,7 @@ A live version of the last build is available [here](https://samu9.github.io/v-m
 
 ## Save and Load
  :exclamation:**Save** and **Load** functions rely on browser's _localStorage_.
- Make sure that this feature works properly on your browser to user these functions.
+ Make sure that this feature works properly on your browser to use these functions.
 
  ## Leaderboard
  Leaderboard keeps track of the best 5 scores for each difficulty.
