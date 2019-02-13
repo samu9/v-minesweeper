@@ -13,7 +13,8 @@
       </button>
       <button
         class="nes-btn"
-        v-bind:class="loaded? 'is-success' : ' is-warning'"
+        v-bind:class="{'is-success' : loaded, 'is-disabled': !loadAvail, 'is-warning' : !loaded}"
+        :disabled="!loadAvail"
         v-on:click="loadGame()"
       >
         <img src="../assets/save.png" width="22px">
@@ -31,14 +32,20 @@ export default {
     return {
       game: game,
       saved: false,
-      loaded: false
+      loaded: false,
+      loadAvail: true
     };
+  },
+  created(){
+    this.loadAvail = localStorage.getItem("game") != null;
+    console.log(this.loadAvail)
   },
   methods: {
     saveGame: function() {
       if (this.game.loss || this.game.victory) return;
       this.saved = true;
       this.game.save();
+      this.loadAvail = true;
       // saved state disappears after 3 seconds
       setTimeout(() => {
         this.saved = false;

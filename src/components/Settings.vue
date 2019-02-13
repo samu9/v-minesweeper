@@ -24,7 +24,7 @@
         <h3 class="title">Custom:</h3>
 
         <div class="nes-field mb-3">
-          <label>Grid size</label>
+          <label>Grid size (3 - 30)</label>
           <input v-model="custom.height" type="text" class="nes-input sett-input grid-input" maxlength="2">
           <input v-model="custom.width" type="text" class="nes-input sett-input grid-input" maxlength="2">
         </div>
