@@ -20,7 +20,7 @@ A live version of the last build is available [here](https://samu9.github.io/v-m
 * Hard (16 x 30 grid, 99 bombs)
 
 ### Custom 
-Grid values range: from 3 to 50.
+Grid values range: from 3 to a max of 30 to avoid to break the layout and keep an enjoiable experience on smaller screens.
 
 Bombs must be at least 1.
 
