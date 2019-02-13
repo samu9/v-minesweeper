@@ -22,7 +22,7 @@ A live version of the last build is available [here](https://samu9.github.io/v-m
 ### Custom 
 Grid values range: from 3 to a max of 30 to avoid to break the layout and keep an enjoiable experience on smaller screens.
 
-If bombs are left to 0, the number will be determined randomly based the grid size and a fixed percentage value.
+If bombs are left to 0, the number will be determined randomly based on the grid size and a fixed percentage value.
 
 ## Save and Load
  :exclamation:**Save** and **Load** functions rely on browser's _localStorage_.
