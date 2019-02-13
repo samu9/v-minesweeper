@@ -45,7 +45,7 @@ export default {
     return {
       game: game,
       openSettings: false,
-      maxVal: 50,
+      maxVal: 30,
       minVal: 3,
       custom: {
         height: 0,
