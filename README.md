@@ -14,12 +14,27 @@ Alternatively, run `npm run dev` and open a browser page to _localhost:8080_
 ## Live version
 A live version of the last build is available [here](https://samu9.github.io/v-minesweeper).
 
+## Select difficulty
+* Easy (8 x 8 grid, 10 bombs)
+* Normal (16 x 16 grid, 40 bombs)
+* Hard (16 x 30 grid, 99 bombs)
+
+### Custom 
+Grid values range: from 3 to 50.
+
+Bombs must be at least 1.
+
 ## Save and Load
  :exclamation:**Save** and **Load** functions rely on browser's _localStorage_.
- Make sure that this feature works properly on your browser to user these functions.
+ Make sure that this feature works properly on your browser to use these functions.
 
  ## Leaderboard
  Leaderboard keeps track of the best 5 scores for each difficulty.
+ 
  Custom grid sizes scores won't be saved.
- A 4 characters nickname must be inserted, and the leaderboard will update automatically.
- :exclamation: Poor Internet connection could lead to connection errors from Google Firebase. 
+ 
+ When you set a new highscore a 4 characters nickname must be inserted, and the leaderboard will update automatically (it might take some time depending on internet connection and response times from the server).
+ 
+ :exclamation: Poor Internet connection could lead to connection errors from Google Firebase.
+ 
+ 
