@@ -4,10 +4,10 @@
 * Leaderboard scores stored on [Google Firebase](https://firebase.google.com/)
 
 ## How to run
-1. Download or clone master
-2. Run `npm install` to install all dependancies
-3. Run `npm run build` to build the code
-4. In _dist/_ folder, launch _index.html_ (it must be launched on a HTTP server)
+1. Download or clone master and move to the folder
+2. Run the command `npm install` to install all dependancies
+3. Run the command `npm run build` to build the code
+4. In _dist/_ folder, launch _index.html_ (it must be launched on a HTTP server with root in _dist/_)
 
 Alternatively, run `npm run dev` and open a browser page to _localhost:8080_
 
@@ -22,7 +22,7 @@ A live version of the last build is available [here](https://samu9.github.io/v-m
 ### Custom 
 Grid values range: from 3 to a max of 30 to avoid to break the layout and keep an enjoiable experience on smaller screens.
 
-Bombs must be at least 1.
+If bombs are left to 0, the number will be determined randomly based the grid size and a fixed percentage value.
 
 ## Save and Load
  :exclamation:**Save** and **Load** functions rely on browser's _localStorage_.
